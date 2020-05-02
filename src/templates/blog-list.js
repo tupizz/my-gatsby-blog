@@ -4,9 +4,20 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import PostItem from "../components/PostItem"
+import Pagination from "../components/Pagination"
 
-const BlogList = ({ data }) => {
+/**
+ *   -- Page context sended to the page
+ *
+ *   limit
+ *   skip
+ *   numPages
+ *   currentPage
+ */
+const BlogList = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
+
+  const { currentPage, numPages } = pageContext
 
   return (
     <Layout>
@@ -31,10 +42,22 @@ const BlogList = ({ data }) => {
           />
         )
       )}
+
+      <Pagination
+        isFirst={currentPage === 1}
+        currentPage={currentPage}
+        isLast={currentPage === numPages}
+        nextPage={`/page/${currentPage + 1}`}
+        numPages={numPages}
+        prevPage={currentPage - 1 === 1 ? "/" : `/page/${currentPage - 1}`}
+      />
     </Layout>
   )
 }
 
+/**
+ * É executado automagicamente pelo gatsby e coloca nas props do componente
+ */
 export const query = graphql`
   query PostListPaged($skip: Int!, $limit: Int!) {
     allMarkdownRemark(

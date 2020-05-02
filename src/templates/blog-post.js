@@ -12,6 +12,9 @@ const BlogPost = ({ data }) => {
   )
 }
 
+/**
+ * É executado automagicamente pelo gatsby e coloca nas props do componente
+ */
 export const query = graphql`
   query Post($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
