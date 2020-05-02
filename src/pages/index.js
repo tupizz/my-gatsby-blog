@@ -8,8 +8,18 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <h1>Home</h1>
-
-    <Link to="/page-2/">Go to page 2</Link>
+    <ul>
+      <li>
+        <Link to="/" activeStyle={{ color: "red" }}>
+          Home
+        </Link>
+      </li>
+      <li>
+        <Link to="/about" activeStyle={{ color: "red" }}>
+          About
+        </Link>
+      </li>
+    </ul>
   </Layout>
 )
 

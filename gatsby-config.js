@@ -1,10 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: `Blog de Tadeu Tupinambá`,
-    description: `Blog sobre tecnologias e desenvolvimento de software.`,
+    description: `Engenheiro de software no BVx Lab (Laboratório de inovação do banco BV), entusiasta de tecnologia, negócios e boas práticas.`,
+    position: `Software engineer`,
     author: `@tupizz`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
