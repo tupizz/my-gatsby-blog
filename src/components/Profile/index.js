@@ -23,7 +23,7 @@ export default function Profile() {
 
   return (
     <S.ProfileWrapper>
-      <S.ProfileLink>
+      <S.ProfileLink to="/">
         <Avatar />
         <S.ProfileAuthor>{title}</S.ProfileAuthor>
       </S.ProfileLink>

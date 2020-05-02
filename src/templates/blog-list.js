@@ -24,14 +24,18 @@ const BlogList = ({ data, pageContext }) => {
       <SEO title="Home" />
 
       {posts.map(
-        ({
-          node: {
-            frontmatter: { background, category, date, description, title },
-            timeToRead,
-            fields: { slug },
+        (
+          {
+            node: {
+              frontmatter: { background, category, date, description, title },
+              timeToRead,
+              fields: { slug },
+            },
           },
-        }) => (
+          index
+        ) => (
           <PostItem
+            key={index}
             slug={slug}
             category={category}
             background={background}
