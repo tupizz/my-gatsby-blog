@@ -25,11 +25,9 @@ export default function Profile() {
     <S.ProfileWrapper>
       <S.ProfileLink>
         <Avatar />
-        <S.ProfileAuthor>
-          {title}
-          <S.ProfilePosition>{position}</S.ProfilePosition>
-        </S.ProfileAuthor>
+        <S.ProfileAuthor>{title}</S.ProfileAuthor>
       </S.ProfileLink>
+      <S.ProfilePosition>{position}</S.ProfilePosition>
       <S.ProfileDescription>{description}</S.ProfileDescription>
     </S.ProfileWrapper>
   )
