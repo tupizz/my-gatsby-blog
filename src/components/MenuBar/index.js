@@ -40,13 +40,13 @@ export default function MenuBar() {
           onClick={() => {
             window.__setPreferredTheme(isDarkMode ? "light" : "dark")
           }}
-          className={theme}
+          className="display"
         >
           <Light />
         </S.MenuBarItem>
-        <S.MenuBarItem title="Mudar visualização">
+        {/* <S.MenuBarItem title="Mudar visualização">
           <Grid />
-        </S.MenuBarItem>
+        </S.MenuBarItem> */}
         <S.MenuBarItem title="Ir para o Topo">
           <Arrow />
         </S.MenuBarItem>
