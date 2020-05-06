@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 
 import { Home } from "styled-icons/boxicons-solid"
 import { SearchAlt2 as Search } from "styled-icons/boxicons-regular"
@@ -9,6 +9,14 @@ import { Grid } from "styled-icons/boxicons-solid"
 import * as S from "./styles"
 
 export default function MenuBar() {
+  const [theme, themeSet] = useState(null)
+  const isDarkMode = theme === "dark"
+
+  useEffect(() => {
+    themeSet(window.__theme)
+    window.__onThemeChange = () => themeSet(window.__theme)
+  }, [])
+
   return (
     <S.MenuBarWrapper>
       {/* Top */}
@@ -27,7 +35,13 @@ export default function MenuBar() {
 
       {/* Bottom */}
       <S.MenuBarGroup>
-        <S.MenuBarItem title="Mudar o tema">
+        <S.MenuBarItem
+          title="Mudar o tema"
+          onClick={() => {
+            window.__setPreferredTheme(isDarkMode ? "light" : "dark")
+          }}
+          className={theme}
+        >
           <Light />
         </S.MenuBarItem>
         <S.MenuBarItem title="Mudar visualização">
