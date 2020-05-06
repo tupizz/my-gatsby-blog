@@ -7,13 +7,25 @@ export default function RecommendedPosts({ next, previous }) {
     <S.RecommendedWrapper>
       {/* Se tiver previous imprime a seguir... */}
       {previous && (
-        <S.RecommendedLink to={previous.fields.slug} className="previous">
+        <S.RecommendedLink
+          to={previous.fields.slug}
+          cover
+          direction="left"
+          bg="#16202c"
+          className="previous"
+        >
           {previous.frontmatter.title}
         </S.RecommendedLink>
       )}
       {/* Se tiver next imprime a seguir... */}
       {next && (
-        <S.RecommendedLink to={next.fields.slug} className="next">
+        <S.RecommendedLink
+          to={next.fields.slug}
+          cover
+          direction="right"
+          bg="#16202c"
+          className="next"
+        >
           {next.frontmatter.title}
         </S.RecommendedLink>
       )}

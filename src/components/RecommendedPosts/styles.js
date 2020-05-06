@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import media from "styled-media-query"
 
 export const RecommendedWrapper = styled.section`
@@ -15,7 +15,7 @@ export const RecommendedWrapper = styled.section`
   `}
 `
 
-export const RecommendedLink = styled(Link)`
+export const RecommendedLink = styled(AniLink)`
   align-items: center;
   background: var(--mediumBackground);
   color: var(--highlight);
